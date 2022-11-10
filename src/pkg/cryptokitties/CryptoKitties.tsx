@@ -45,7 +45,8 @@ export const CryptoKitties = () => {
   const handleSortByChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const sortBy = event.target.value as keyof CryptoKitty;
     setSortBy(sortBy);
-    setSearchParams({ sortBy });
+    searchParams.set('sortBy', sortBy);
+    setSearchParams(searchParams);
   };
 
   const handleSortDirectionChange = (
@@ -53,7 +54,8 @@ export const CryptoKitties = () => {
   ) => {
     const sortDirection = event.target.value as 'asc' | 'desc';
     setSortDirection(sortDirection);
-    setSearchParams({ sortDirection });
+    searchParams.set('sortDirection', sortDirection);
+    setSearchParams(searchParams);
   };
 
   return (
